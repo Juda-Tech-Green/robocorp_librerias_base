@@ -1,0 +1,12 @@
+{
+  "GreenStock": {
+    "type": "image",
+    "path": "Images/GreenStock.png",
+    "confidence": 0.8
+  },
+  "SearchButton": {
+    "type": "image",
+    "path": "Images/SearchButton.png",
+    "confidence": 0.9
+  }
+}

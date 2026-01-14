@@ -1,0 +1,5 @@
+Archivo: SampleXLSFile.xlsx | Ruta: C:\Users\juand\Warehouse\02_Python_proyects\robocorp_projects\introduction\DataSets\SampleXLSFile.xlsx
+Archivo: sampledatainsurance.xlsx | Ruta: C:\Users\juand\Warehouse\02_Python_proyects\robocorp_projects\introduction\DataSets\sampledatainsurance.xlsx
+Archivo: conda.yaml | Ruta: C:\Users\juand\Warehouse\02_Python_proyects\robocorp_projects\introduction\conda.yaml
+Archivo: robot.yaml | Ruta: C:\Users\juand\Warehouse\02_Python_proyects\robocorp_projects\introduction\robot.yaml
+Archivo: environment_windows_amd64_freeze.yaml | Ruta: C:\Users\juand\Warehouse\02_Python_proyects\robocorp_projects\introduction\output\environment_windows_amd64_freeze.yaml
