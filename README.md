@@ -1,60 +1,43 @@
-# Template: Python - Minimal
+# 🤖 Robocorp RPA Framework - Módulos Prácticos
 
-This template leverages the new [Python framework](https://github.com/robocorp/robocorp), the [libraries](https://github.com/robocorp/robocorp/blob/master/docs/README.md#python-libraries) from to same project as well.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)
+![Robocorp](https://img.shields.io/badge/RPA-Robocorp-black?logo=robotframework&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Educational-orange)
 
-The template provides you with the basic structure of a Python project: logging out of the box and controlling your tasks without fiddling with the base Python stuff. The environment contains the most used libraries, so you do not have to start thinking about those right away. 
+Este repositorio contiene una colección de scripts y módulos desarrollados como ejercicio académico para explorar las capacidades de la librería **RPA Framework** y la orquestación con **Robocorp**.
 
-👉 Other templates are available as well via our tooling and on our [Portal](https://robocorp.com/portal/tag/template)
+El proyecto demuestra la implementación de flujos de trabajo automatizados que interactúan con diversas aplicaciones de escritorio, servicios web, APIs y manipulación de archivos, siguiendo las mejores prácticas de modularización en Python.
 
-## Running
+## 🚀 Funcionalidades y Librerías Implementadas
 
-#### VS Code
-1. Get [Robocorp Code](https://robocorp.com/docs/developer-tools/visual-studio-code/extension-features) -extension for VS Code.
-1. You'll get an easy-to-use side panel and powerful command-palette commands for running, debugging, code completion, docs, etc.
+El proyecto está estructurado en módulos reutilizables (`KeywordLibrary`), cada uno enfocado en una tecnología específica:
 
-#### Command line
+| Librería RPA / Módulo | Descripción del Ejercicio |
+| :--- | :--- |
+| **RPA.Excel.Files** | Lectura y escritura de hojas de cálculo sin interfaz gráfica (modo headless). |
+| **RPA.Excel.Application** | Automatización de Excel interactuando directamente con la aplicación de escritorio. |
+| **RPA.PDF** | Manipulación de PDFs: unión de archivos, extracción de texto y recorte de imágenes. |
+| **RPA.Email.ImapSmtp** | Envío de correos (texto y HTML con imágenes inline) y descarga de adjuntos mediante protocolos IMAP/SMTP. |
+| **RPA.HTTP & JSON** | Consumo de APIs REST (GET, POST, PUT, DELETE). Ejemplo práctico con **PokeAPI**. |
+| **RPA.Browser.Selenium** | Automatización web para traducir subtítulos (`.srt`) usando Google Translate, respetando los tiempos de sincronización. |
+| **RPA.Archive** | Compresión y descompresión de archivos (ZIP) con filtrado recursivo por extensiones. |
+| **RPA.Word.Application** | Creación, edición y lectura de documentos `.docx` utilizando la automatización COM de Windows. |
+| **RPA.Dialogs** | Creación de interfaces gráficas interactivas para solicitar input al usuario antes de la ejecución. |
 
-1. [Get RCC](https://github.com/robocorp/rcc?tab=readme-ov-file#getting-started)
-1. Use the command: `rcc run`
+## 🛠️ Estructura del Proyecto
 
-## Results
-
-🚀 After running the bot, check out the `log.html` under the `output` -folder.
-
-## Dependencies
-
-We strongly recommend getting familiar with adding your dependencies in [conda.yaml](conda.yaml) to control your Python dependencies and the whole Python environment for your automation.
-
-<details>
-  <summary>🙋‍♂️ "Why not just pip install...?"</summary>
-
-Think of [conda.yaml](conda.yaml) as an equivalent of the requirements.txt, but much better. 👩‍💻 With `conda.yaml`, you are not just controlling your PyPI dependencies; you control the complete Python environment, which makes things repeatable and easy.
-
-👉 You will probably need to run your code on another machine quite soon, so by using `conda.yaml`:
-- You can avoid `Works on my machine` -cases
-- You do not need to manage Python installations on all the machines
-- You can control exactly which version of Python your automation will run on 
-  - You'll also control the pip version to avoid dep. resolution changes
-- No need for venv, pyenv, ... tooling and knowledge sharing inside your team.
-- Define dependencies in conda.yaml, let our tooling do the heavy lifting.
-- You get all the content of [conda-forge](https://prefix.dev/channels/conda-forge) without any extra tooling
-
-> Dive deeper with [these](https://github.com/robocorp/rcc/blob/master/docs/recipes.md#what-is-in-condayaml) resources.
-
-</details>
-<br/>
-
-> The full power of [rpaframework](https://robocorp.com/docs/python/rpa-framework) -libraries is also available on Python as a backup while we implement the new Python libraries.
-
-## What now?
-
-🚀 Now, go get'em
-
-Start writing Python and remember that the AI/LLM's out there are getting really good and creating Python code specifically.
-
-👉 Try out [Robocorp ReMark 💬](https://chat.robocorp.com)
-
-For more information, do not forget to check out the following:
-- [Robocorp Documentation -site](https://robocorp.com/docs)
-- [Portal for more examples](https://robocorp.com/portal)
-- Follow our main [robocorp -repository](https://github.com/robocorp/robocorp) as it is the main location where we developed the libraries and the framework.
+```text
+├── KeywordLibrary/          # Módulos con la lógica encapsulada
+│   ├── api_manager.py       # Gestión de peticiones HTTP
+│   ├── archive.py           # Gestión de compresión ZIP
+│   ├── browser.py           # Traductor de subtítulos con Selenium
+│   ├── email.py             # Cliente de correo
+│   ├── excel.py             # Manejo de datos Excel
+│   ├── pdf.py               # Herramientas PDF
+│   └── word.py              # Automatización de MS Word
+├── DataSets/                # Archivos de entrada para pruebas (.xlsx, .srt, .pdf)
+├── output/                  # Carpeta generada con los resultados de la automatización
+├── tasks.py                 # Punto de entrada principal (Main) que orquesta los robots
+├── conda.yaml               # Definición del entorno y dependencias
+└── robot.yaml               # Configuración de ejecución de Robocorp
